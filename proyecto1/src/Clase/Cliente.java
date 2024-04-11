@@ -12,17 +12,21 @@ public class Cliente {
     public String cedula;
     public String nombre;
     public String apellidos;
+    public Direcciones direccion;
+    public String email;
+    //ArrayList<Direcciones> listaDirecciones;
 
     public Cliente() {
     }
 
-    public Cliente(String cedula, String nombre, String apellidos) {
+    public Cliente(String cedula, String nombre, String apellidos, Direcciones direccion,String email) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.direccion = direccion;
+        this.email = email;
     }
 
-    
     public String getCedula() {
         return cedula;
     }
@@ -47,9 +51,26 @@ public class Cliente {
         this.apellidos = apellidos;
     }
 
+    public Direcciones getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(Direcciones direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
-        return "Datos Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellidos=" + apellidos + '}';
+        return "Datos Usuario:\n" + "cedula= " + cedula + ", nombre= " + nombre + ", apellidos= " + apellidos + "\n" +
+                "correo= " + email + "dirección= " + direccion;
     }
     
    

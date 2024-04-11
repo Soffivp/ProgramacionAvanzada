@@ -5,6 +5,7 @@
 package Presentacion;
 
 import Clase.Cliente;
+import Clase.Direcciones;
 import Logica.LCliente;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -21,15 +22,16 @@ public class Proyecto1 {
      */
     public static void main(String[] args) {
         Cliente obj = new Cliente();
+        Direcciones dir = new Direcciones();
         LCliente objlcliente = new LCliente();
         Scanner scan = new Scanner(System.in);
-        String ced;
+        String aux;
         String nom;
         String ap;
 
         System.out.println("Ingrese la cedula del usuario");
-        ced = scan.nextLine();
-        obj.setCedula(ced);
+        aux = scan.nextLine();
+        obj.setCedula(aux);
         System.out.println("Ingrese su nombre");
         nom = scan.nextLine();
         obj.setNombre(nom);
@@ -37,10 +39,31 @@ public class Proyecto1 {
         System.out.println("Ingrese su apellido");
         ap = scan.nextLine();
         obj.setApellidos(ap);
-        scan.nextLine();
+        //scan.nextLine();
+        System.out.println("Ingrese su correo");
+        aux = scan.nextLine();
+        obj.setEmail(aux);
+        System.out.println("Ingrese su calle principal");
+        aux = scan.nextLine();
+        dir.setCalle1(aux);
+        System.out.println("Ingrese su calle secundaria");
+        aux = scan.nextLine();
+        dir.setCalle2(aux);
+        obj.setDireccion(dir);
+        //scan.nextLine();
 
         if (objlcliente.validarCedula(obj)) {
-            System.out.println(obj.toString());
+
+            if (objlcliente.validarCorreo(obj)){
+
+                if (objlcliente.validarDireccion(obj)){
+                    System.out.println(obj.toString());
+                }
+                else
+                    System.out.println("Direccion incorrecta");
+            }
+            else
+                System.out.println("Correo incorrecto");
         } else {
             System.out.println("Cedula Incorrecta");
         }

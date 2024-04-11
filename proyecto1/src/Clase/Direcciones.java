@@ -13,18 +13,13 @@ import java.util.ArrayList;
 public class Direcciones {
     String calle1;
     String calle2;
-    Direcciones direccion;
-    String email;
-    ArrayList<Direcciones> listaDirecciones;
-
     public Direcciones() {
+
     }
 
-    public Direcciones(String calle1, String calle2, Direcciones direccion, ArrayList<Direcciones> listaDirecciones) {
+    public Direcciones(String calle1,String calle2) {
         this.calle1 = calle1;
         this.calle2 = calle2;
-        this.direccion = direccion;
-        this.listaDirecciones = listaDirecciones;
     }
 
     public String getCalle1() {
@@ -43,22 +38,9 @@ public class Direcciones {
         this.calle2 = calle2;
     }
 
-    public Direcciones getDireccion() {
-        return direccion;
+    @Override
+    public String toString() {
+        return "Direccion: " + calle1 + " " + calle2;
     }
-
-    public void setDireccion(Direcciones direccion) {
-        this.direccion = direccion;
-    }
-
-    public ArrayList<Direcciones> getListaDirecciones() {
-        return listaDirecciones;
-    }
-
-    public void setListaDirecciones(ArrayList<Direcciones> listaDirecciones) {
-        this.listaDirecciones = listaDirecciones;
-    }
-    
-    
 }
 
